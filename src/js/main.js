@@ -1,16 +1,30 @@
 import {primitives} from "./scenes/primitives";
 import {solar} from "./scenes/solar";
+import Navigo from "navigo";
+import {balls} from "./scenes/balls";
+import {shadersScene} from "./scenes/shaders";
 
-const path = window.location.pathname;
+const router = new Navigo('/');
 
-switch (path.slice(1)) {
-	case 'solar':
-		solar();
-		break;
+router.on('/:type', function (match) {
+	switch (match.url) {
+		case 'solar':
+			solar();
+			break;
 
-	case 'primitives':
-	default:
-		primitives();
-		break;
-}
+		case 'balls':
+			balls();
+			break;
+
+		case 'primitives':
+			primitives();
+			break;
+
+		case 'shaders':
+			shadersScene();
+			break;
+	}
+});
+
+router.resolve()
 

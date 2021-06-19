@@ -5,19 +5,68 @@ import {GUI} from "dat.gui";
 import '../proto.js';
 import {addCommonGUI} from "../common";
 
+const loader = new THREE.TextureLoader();
+
+loader.load()
+
+const textures = [
+  loader.load('images/1.jpg'),
+  loader.load('images/2.jpg'),
+  loader.load('images/3.png'),
+]
+
+const filters = {
+  "nearest": THREE.NearestFilter,
+  "linear": THREE.LinearFilter,
+  "NMN": THREE.NearestMipmapNearestFilter,
+  "NML": THREE.NearestMipmapLinearFilter,
+  "LMN": THREE.LinearMipmapNearestFilter,
+  "LML": THREE.LinearMipmapLinearFilter
+}
+
 const objectMap = {
   cube: undefined,
   sphere: undefined,
   cone: undefined,
-  torus: undefined
+  torus: undefined,
 }
 
 const params = {
   currentObjectName: "cube",
   currentObject: undefined,
+  currentMaterial: "phong",
+  currentTexture: 0,
+  currentFilter: "nearest",
+  showLightHelper: false
 }
 
-let scene, camera, renderer, controls, stats, gui, directionalLight, ambientLight;
+const materials = {
+  "phong": new THREE.MeshPhongMaterial({ color: 0xafe32a, map: textures[params.currentTexture] }),
+  "basic": new THREE.MeshBasicMaterial({ color: 0xafe32a, map: textures[params.currentTexture] }),
+  "depth": new THREE.MeshDepthMaterial({ color: 0xafe32a, map: textures[params.currentTexture] }),
+  "normal": new THREE.MeshNormalMaterial({ color: 0xafe32a, map: textures[params.currentTexture] }),
+  "toon": new THREE.MeshToonMaterial({ color: 0xafe32a, map: textures[params.currentTexture] }),
+}
+
+let scene, camera, renderer, controls, stats, gui, directionalLight, ambientLight, lightHelper;
+
+function drawPlane() {
+  const planeSize = 40;
+
+  const planeTexture = loader.load('images/4.png')
+  planeTexture.wrapS = THREE.RepeatWrapping;
+  planeTexture.wrapT = THREE.RepeatWrapping;
+  planeTexture.magFilter = THREE.NearestFilter;
+  const repeats = planeSize / 2;
+  planeTexture.repeat.set(repeats, repeats);
+
+  const geo = new THREE.PlaneGeometry(planeSize, planeSize);
+  const mat = new THREE.MeshPhongMaterial({map: planeTexture, side: THREE.DoubleSide})
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.position.set(0, -1, 0)
+  mesh.rotateX(Math.PI * -0.5)
+  scene.add(mesh);
+}
 
 function addGUI() {
   stats = new Stats();
@@ -41,6 +90,22 @@ function addGUI() {
   ambientLightFolder.addThreeColor(ambientLight, 'color');
 
   const directionalLightFolder = lightFolder.addFolder("directional");
+  directionalLightFolder.add(lightHelper, 'visible')
+  directionalLightFolder.add(directionalLight.position, 'x', -10, 10, 0.01)
+    .onChange(() => {
+      directionalLight.target.updateMatrixWorld();
+      lightHelper.update()
+    })
+  directionalLightFolder.add(directionalLight.position, 'y', -10, 10, 0.01)
+    .onChange(() => {
+      directionalLight.target.updateMatrixWorld();
+      lightHelper.update()
+    })
+  directionalLightFolder.add(directionalLight.position, 'z', -10, 10, 0.01)
+    .onChange(() => {
+      directionalLight.target.updateMatrixWorld();
+      lightHelper.update()
+    })
   directionalLightFolder.add(directionalLight, 'intensity', 0, 3, 0.01)
   directionalLightFolder.addThreeColor(directionalLight, 'color')
 
@@ -51,12 +116,30 @@ function addGUI() {
       scene.remove(params.currentObject);
       params.currentObject = objectMap[val];
       scene.add(params.currentObject);
+      params.currentObject.material = materials[params.currentMaterial]
+      params.currentObject.material.map = textures[params.currentTexture]
     });
+  objectFolder.add(params, 'currentMaterial', Object.keys(materials))
+    .onChange(val => {
+      params.currentMaterial = val;
+      params.currentObject.material = materials[val]
+      params.currentObject.material.map = textures[params.currentTexture]
+    })
+  objectFolder.add(params, 'currentTexture', textures.map((el, idx) => idx))
+    .onChange(val => {
+      params.currentTexture = val;
+      params.currentObject.material.map = textures[val]
+    })
+  objectFolder.add(params, 'currentFilter', Object.keys(filters))
+    .onChange(val => {
+      params.currentFilter = val;
+      params.currentObject.material.map.minFilter = filters[val]
+    })
   objectFolder.addThreeColor(params.currentObject.material, 'color')
 }
 
 function registerObjects() {
-  const material = new THREE.MeshPhongMaterial({ color: 0xafe32a });
+  const material = materials[params.currentMaterial]
 
   const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
   objectMap.cube = new THREE.Mesh(boxGeometry, material);
@@ -73,7 +156,7 @@ function registerObjects() {
 
 function init() {
   scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.z = 3;
 
   renderer = new THREE.WebGLRenderer();
@@ -87,7 +170,12 @@ function init() {
 
   directionalLight = new THREE.DirectionalLight(0xFFFFFF, 1);
   directionalLight.position.set(-1, 2, 4);
+  directionalLight.target.position.set(0,0,0)
   scene.add(directionalLight);
+
+  lightHelper = new THREE.DirectionalLightHelper(directionalLight);
+  lightHelper.visible = false;
+  scene.add(lightHelper)
 
   ambientLight = new THREE.AmbientLight( 0x404040, 0.2);
   scene.add(ambientLight);
@@ -95,6 +183,7 @@ function init() {
   controls = new OrbitControls(camera, renderer.domElement);
 
   addGUI();
+  drawPlane();
 
   //resize
   window.addEventListener('resize', onResize, false);

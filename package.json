@@ -4,17 +4,19 @@
 	"description": "",
 	"scripts": {
 		"dev": "webpack serve --port 3000 --config webpack.dev.js --progress --host 0.0.0.0",
-		"build": "webpack --config webpack.prod.js --colors --progress"
+		"build": "webpack --config webpack.prod.js --progress"
 	},
 	"author": "",
 	"license": "MIT",
 	"dependencies": {
 		"dat.gui": "^0.7.7",
+		"navigo": "^8.11.1",
 		"three": "^0.128.0"
 	},
 	"devDependencies": {
 		"clean-webpack-plugin": "^4.0.0-alpha.0",
 		"copy-webpack-plugin": "^8.1.1",
+		"raw-loader": "^4.0.2",
 		"webpack": "^5.37.0",
 		"webpack-cli": "^4.7.0",
 		"webpack-dev-server": "^3.11.2",

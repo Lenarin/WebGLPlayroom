@@ -12,4 +12,12 @@ module.exports = {
 			patterns: [{ from: '**/*', to: '', context: 'src/static' }],
 		}),
 	],
+	module: {
+		rules: [
+		  {
+			test: /\.glsl$/i,
+			use: 'raw-loader',
+		  },
+		],
+	  },
 };
