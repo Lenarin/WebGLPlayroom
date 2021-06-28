@@ -8,6 +8,8 @@ import fAnim2 from './fAnim2.glsl';
 import fMozaic from './fMozaic.glsl';
 import fSplit from './fSplit.glsl';
 import fPixelize from './fPixelize.glsl';
+import fGrayscale from './fGrayscale.glsl';
+import fSepia from './fSepia.glsl';
 
 export const shaders = {
     gold: {
@@ -91,4 +93,12 @@ export const shaders = {
         vertex: vDefault,
         fragment: fPixelize,
     },
+    grayscale: {
+        vertex: vDefault,
+        fragment: fGrayscale
+    },
+    sepia: {
+        vertex: vDefault,
+        fragment: fSepia
+    }
 }

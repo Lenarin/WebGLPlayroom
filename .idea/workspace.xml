@@ -17,41 +17,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75014276-cad9-441a-b196-c6745b2b14e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/balls.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/fAnim.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/fAnim1.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/fAnim2.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/fGold.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/fGradient.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/fMozaic.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/fSplit.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/fTexture.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/vDefault.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/css/shaders.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/images/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/images/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/images/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/images/flower.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/images/forest.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/images/roundshadow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/images/sea.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/shaders/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/fGrayscale.glsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/scenes/shaders/fSepia.glsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/scenes/commonScene.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/scenes/primitives.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/scenes/primitives.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/scenes/primitivesScene.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/scenes/solar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/scenes/solar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.common.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.dev.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/scenes/shaders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/scenes/shaders/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +105,9 @@
       <workItem from="1623527235762" duration="227000" />
       <workItem from="1623685428010" duration="577000" />
       <workItem from="1623757644173" duration="46000" />
-      <workItem from="1624117055906" duration="7686000" />
+      <workItem from="1624117055906" duration="8573000" />
+      <workItem from="1624284110053" duration="33000" />
+      <workItem from="1624754768011" duration="6775000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1621205265381</created>
@@ -145,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621205265381</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Shaders">
+      <created>1624138783314</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624138783314</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,13 +156,14 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="Shaders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shaders" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="708" y="315" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1623320533621">
+    <state x="708" y="315" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1624826024078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="708" y="315" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1623320533621" />
+    <state x="708" y="315" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624826024078" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1621202017652">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -193,41 +172,57 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="172" y="310" key="#org.intellij.plugins.intelliLang.inject.config.ui.BaseInjectionDialog/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1623685769443" />
-    <state width="1899" height="196" key="GridCell.Tab.0.bottom" timestamp="1623686008909">
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1624825910449">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="196" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1623686008909" />
-    <state width="1899" height="196" key="GridCell.Tab.0.center" timestamp="1623686008908">
+    <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624825910449" />
+    <state width="1899" height="196" key="GridCell.Tab.0.bottom" timestamp="1624834738751">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="196" key="GridCell.Tab.0.center/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1623686008908" />
-    <state width="1899" height="196" key="GridCell.Tab.0.left" timestamp="1623686008908">
+    <state width="1899" height="196" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624834738751" />
+    <state width="1899" height="196" key="GridCell.Tab.0.center" timestamp="1624834738751">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="196" key="GridCell.Tab.0.left/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1623686008908" />
-    <state width="1899" height="196" key="GridCell.Tab.0.right" timestamp="1623686008908">
+    <state width="1899" height="196" key="GridCell.Tab.0.center/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624834738751" />
+    <state width="1899" height="196" key="GridCell.Tab.0.left" timestamp="1624834738751">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="196" key="GridCell.Tab.0.right/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1623686008908" />
+    <state width="1899" height="196" key="GridCell.Tab.0.left/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624834738751" />
+    <state width="1899" height="196" key="GridCell.Tab.0.right" timestamp="1624834738751">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="196" key="GridCell.Tab.0.right/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624834738751" />
     <state x="540" y="255" key="IDE.errors.dialog" timestamp="1621204373490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1621204373490" />
+    <state x="817" y="139" key="RollbackChangesDialog" timestamp="1624825912513">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="817" y="139" key="RollbackChangesDialog/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624825912513" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1623685808271">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1623685808271" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1624131252642">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1624138788273">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624131252642" />
-    <state x="674" y="259" width="571" height="522" key="find.popup" timestamp="1622952586502">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624138788273" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1624825428829">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="674" y="259" width="571" height="522" key="find.popup/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1622952586502" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624825428829" />
+    <state x="674" y="259" width="571" height="574" key="find.popup" timestamp="1624825452547">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="674" y="259" width="571" height="574" key="find.popup/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624825452547" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1624130930041">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624130930041" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1624826083740">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.110.1440.860@0.0.1920.1040" timestamp="1624826083740" />
   </component>
 </project>
