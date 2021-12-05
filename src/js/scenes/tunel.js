@@ -43,7 +43,8 @@ let settings = {
   regime: 'lines',
   linesDetails: 1000,
   linesCirculars: 12,
-  linesRadius: 8
+  linesRadius: 8,
+  noise: 10,
 }
 
 function addGUI() {
@@ -90,6 +91,8 @@ function addGUI() {
   linesFolder.add(settings, 'linesCirculars', 3, 36, 1)
     .onChange(() => compute())
   linesFolder.add(settings, 'linesRadius', 2, 50, 0.1)
+    .onChange(() => compute())
+  linesFolder.add(settings, 'noise', 0, 50, 0.1)
     .onChange(() => compute())
 }
 
@@ -216,7 +219,7 @@ function compute() {
         const position = p.clone();
 
         let angle = (j / settings.linesCirculars) * Math.PI * 2;
-        angle += simplex.noise2D(index * 0.3, 0) * 30
+        angle += simplex.noise2D(index * settings.noise, 0)
 
         const sin = Math.sin(angle);
         const cos = -Math.cos(angle);

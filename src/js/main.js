@@ -1,6 +1,5 @@
 import {primitives} from "./scenes/primitives";
 import {solar} from "./scenes/solar";
-import Navigo from "navigo";
 import {balls} from "./scenes/balls";
 import {shadersScene} from "./scenes/shaders";
 import {tunel} from "./scenes/tunel";
@@ -10,7 +9,7 @@ const urlParams = new URLSearchParams(queryString)
 const scene = urlParams.get('scene')
 
 if (!scene) {
-	window.location.replace(window.location.origin + '?scene=tunel');
+	window.location.replace(window.location.origin  + window.location.pathname + '?scene=tunel');
 }
 
 switch (scene) {

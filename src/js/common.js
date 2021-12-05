@@ -11,5 +11,8 @@ const param = {
 export function addCommonGUI(gui) {
   const scene = gui.addFolder("scene");
   scene.add(param, 'current', commonGUIScenes)
-    .onChange(val => window.location.replace(window.location.origin + `?scene=${val}`))
+    .onChange(val => {
+      const target = window.location.origin + window.location.pathname + `?scene=${val}`
+      window.location.replace(target)
+    })
 }
