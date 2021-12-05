@@ -1,4 +1,4 @@
-const commonGUIScenes = ["solar", "primitives", "balls", "shaders"]
+const commonGUIScenes = ["solar", "primitives", "balls", "shaders", "tunel"]
 
 const param = {
   current: window.location.pathname.slice(1)

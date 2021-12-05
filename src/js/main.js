@@ -3,6 +3,7 @@ import {solar} from "./scenes/solar";
 import Navigo from "navigo";
 import {balls} from "./scenes/balls";
 import {shadersScene} from "./scenes/shaders";
+import {tunel} from "./scenes/tunel";
 
 const router = new Navigo('/');
 
@@ -22,6 +23,10 @@ router.on('/:type', function (match) {
 
 		case 'shaders':
 			shadersScene();
+			break;
+
+		case 'tunel':
+			tunel();
 			break;
 	}
 });
