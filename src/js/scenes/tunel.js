@@ -216,7 +216,7 @@ function compute() {
         const position = p.clone();
 
         let angle = (j / settings.linesCirculars) * Math.PI * 2;
-        angle += simplex.noise2D(index, 0) * 15
+        angle += simplex.noise2D(index * 0.3, 0) * 30
 
         const sin = Math.sin(angle);
         const cos = -Math.cos(angle);

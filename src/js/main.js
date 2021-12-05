@@ -5,31 +5,32 @@ import {balls} from "./scenes/balls";
 import {shadersScene} from "./scenes/shaders";
 import {tunel} from "./scenes/tunel";
 
-const router = new Navigo('/');
+const queryString = window.location.search
+const urlParams = new URLSearchParams(queryString)
+const scene = urlParams.get('scene')
 
-router.on('/:type', function (match) {
-	switch (match.url) {
-		case 'solar':
-			solar();
-			break;
+if (!scene) {
+	window.location.replace(window.location.origin + '?scene=tunel');
+}
 
-		case 'balls':
-			balls();
-			break;
+switch (scene) {
+	case 'solar':
+		solar();
+		break;
 
-		case 'primitives':
-			primitives();
-			break;
+	case 'balls':
+		balls();
+		break;
 
-		case 'shaders':
-			shadersScene();
-			break;
+	case 'primitives':
+		primitives();
+		break;
 
-		case 'tunel':
-			tunel();
-			break;
-	}
-});
+	case 'shaders':
+		shadersScene();
+		break;
 
-router.resolve()
-
+	case 'tunel':
+		tunel();
+		break;
+}
