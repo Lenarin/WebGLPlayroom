@@ -26,7 +26,7 @@ function addGUI() {
 
 function init() {
   CANVAS = document.getElementById("canvas");
-  GL = canvas.getContext('webgl');
+  GL = CANVAS.getContext('webgl');
 
   addGUI();
   canvasMain();
